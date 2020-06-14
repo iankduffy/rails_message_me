@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MessageMe</title>
+    <title>IanKDuffy | Ruby On Rails Projects</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="u-bg-grey">
+    <nav class="o-header u-pad-h-sm">
+      <%= link_to (image_tag ("logo.svg"), class: "u-pad-h-sm"), root_path, class: "o-header__logo" %>
+      <div class="o-header__group">
+        <%= link_to 'Home', root_path, class: "o-header__link"%>
+      </div>
+      <div class="o-header__group">
+        <%= link_to 'Log in', login_path, class: "o-header__link"%>
+      </div>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
