@@ -1,4 +1,16 @@
 <div class="container u-mar-v-md u-t-cen">
   <h1 class="h2">Ruby on Rails Chat room app</h1>
   <p class="h3">Welcome to ruby on rails chat app using ActionCable - log in to continue.</p>
+
+  <div class="c-chat c-chat--example" id="message-container">
+    <%= render @messages %>
+
+  </div>
+  <%= form_for(@message, html:{ class: "container__row col-12" }, url: message_path, remote: true) do |f| %>
+    <div class="col-8">
+      <%= f.text_field :body, class: "o-input", placeholder: "Message:" %>
+    </div>
+    <%= f.submit("submit", class: "c-btn c-btn--pri col-4") %>
+  <% end %>
+
 </div>

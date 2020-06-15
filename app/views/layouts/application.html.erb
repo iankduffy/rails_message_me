@@ -16,12 +16,17 @@
         <%= link_to 'Home', root_path, class: "o-header__link"%>
       </div>
       <div class="o-header__group">
-        <%= link_to 'Log in', login_path, class: "o-header__link"%>
+      <% if logged_in? %>
+        <%= link_to "Logout", logout_path, method: :delete, class: "o-header__link" %>
+      <% else %>
+        <%= link_to "Log in", login_path, class: "o-header__link" %>
+      <% end %>
       </div>
     </nav>
     <main>
+      <%= render partial: "layouts/partials/messages" %>
       <%= yield %>
     </main>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', async: true %>
   </body>
 </html>

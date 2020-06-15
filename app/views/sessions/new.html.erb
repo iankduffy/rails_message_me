@@ -1,1 +1,27 @@
-<h1>Log in page</h1>
+<div class="container u-mar-v-md u-t-cen">
+  <h1 class="h2">Log in / Sign Up</h1>
+  <p class="h3"></p>
+
+  <div class="container container__row u-bor-primary u-pad-v-md u-pad-h-md u-mar-t-lg u-bg-white">
+    <div class="col-12 col-6@md u-bor-gen u-pad-v-md">
+      Log in
+      <div class="o-form__container u-center col-8">
+        <%= form_with(scope: :session, url: login_path, local: true, class: "o-form") do |f| %>
+          <div>
+            <%= f.label :username %>
+            <%= f.text_field :username, class: "o-input" %>
+          </div>
+          <div>
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "o-input" %>
+          </div>
+          <%= f.submit("Sign In", class: "c-btn c-btn--pri col-12") %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-12 col-6@md u-pad-v-md">
+      Sign up
+    </div>
+  </div>
+</div>

@@ -64,6 +64,7 @@
 .u-bor-gen {
   @include breakpoint-max(md) {
     border-right: none;
+    border-bottom: $primary-color 1px solid; 
   }
 
   @include breakpoint-min(md) {
